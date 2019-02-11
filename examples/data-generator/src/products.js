@@ -1,10 +1,10 @@
-import { random, lorem } from 'faker/locale/en';
+import { random, lorem } from 'faker/locale/zh_CN.js';
 
 import { randomFloat, weightedBoolean } from './utils';
 
 export default db => {
     let id = 0;
-
+    let products = ['北欧极光之旅', '东欧十日游', '日本樱花游', '伦敦深度游', '墨尔本-堪培拉悉尼四天巴士团', '蒸汽火车+企鹅岛一日游', '蒸汽火车+酒庄一日游', '大洋路特价一日游', '塔州紫色经典4日'];
     return db.categories.reduce(
         (acc, category) => [
             ...acc,
@@ -15,17 +15,17 @@ export default db => {
                 return {
                     id: id++,
                     category_id: category.id,
-                    reference:
-                        category.name.substr(0, 2) +
-                        '-' +
-                        random.alphaNumeric(5) +
-                        '-' +
-                        random.arrayElement('ABCDEFGHIJKLMNOPQRSTUVWXYZ'),
+                    reference: products[Math.floor(Math.random() * products.length)],
+                    // reference:
+                    //     category.name.substr(0, 2) +
+                    //     '-' +
+                    //     random.alphaNumeric(5) +
+                    //     '-' +
+                    //     random.arrayElement('ABCDEFGHIJKLMNOPQRSTUVWXYZ'),
                     width: width,
                     height: height,
-                    price: randomFloat(
-                        (width * height) / 20,
-                        (width * height) / 15
+                    price: random.number(
+                        (width * height)
                     ),
                     thumbnail:
                         'https://marmelab.com/posters/' +

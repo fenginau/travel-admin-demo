@@ -52,9 +52,9 @@ const datagridStyles = {
 
 class TabbedDatagrid extends React.Component {
     tabs = [
-        { id: 'ordered', name: 'ordered' },
-        { id: 'delivered', name: 'delivered' },
-        { id: 'cancelled', name: 'cancelled' },
+        { id: 'ordered', name: '未确认订单' },
+        { id: 'delivered', name: '完成订单' },
+        { id: 'cancelled', name: '已取消订单' },
     ];
 
     state = { ordered: [], delivered: [], cancelled: [] };
@@ -102,17 +102,18 @@ class TabbedDatagrid extends React.Component {
                         <div>
                             {filterValues.status === 'ordered' && (
                                 <Datagrid {...props} ids={this.state.ordered}>
-                                    <DateField source="date" showTime />
-                                    <TextField source="reference" />
-                                    <CustomerReferenceField />
-                                    <NbItemsField />
+                                    <DateField source="date" showTime label="日期" />
+                                    <TextField source="reference" label="订单号" />
+                                    <CustomerReferenceField label="客户" />
+                                    <NbItemsField label="人数" />
                                     <NumberField
                                         source="total"
                                         options={{
                                             style: 'currency',
-                                            currency: 'USD',
+                                            currency: 'AUD',
                                         }}
                                         className={classes.total}
+                                        label="总计"
                                     />
                                     <EditButton />
                                 </Datagrid>

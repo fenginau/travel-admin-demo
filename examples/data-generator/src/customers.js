@@ -1,4 +1,4 @@
-import { date, name, internet, address } from 'faker/locale/en';
+import { date, name, internet, address } from 'faker/locale/en_AU';
 
 import { randomDate, weightedBoolean } from './utils';
 

@@ -24,7 +24,7 @@ const ListFilters = props => (
 const InvoiceList = props => (
     <List {...props} filters={<ListFilters />} perPage={25}>
         <Datagrid rowClick="expand" expand={<InvoiceShow />}>
-            <TextField source="id" />
+            <TextField source="id" label="编号" />
             <DateField source="date" />
             <ReferenceField source="customer_id" reference="customers">
                 <FullNameField />
@@ -40,10 +40,10 @@ const InvoiceList = props => (
             <ReferenceField source="command_id" reference="commands">
                 <TextField source="reference" />
             </ReferenceField>
-            <NumberField source="total_ex_taxes" />
-            <NumberField source="delivery_fees" />
-            <NumberField source="taxes" />
-            <NumberField source="total" />
+            <NumberField source="total_ex_taxes" label="税前价" />
+            {/* <NumberField source="delivery_fees" /> */}
+            <NumberField source="taxes" label="税"/>
+            <NumberField source="total" label="总计"/>
         </Datagrid>
     </List>
 );

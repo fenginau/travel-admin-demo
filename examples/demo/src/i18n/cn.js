@@ -1,15 +1,15 @@
-import englishMessages from 'ra-language-english';
+import chineseMessages from 'ra-language-chinese';
 
 export default {
-    ...englishMessages,
+    ...chineseMessages,
     pos: {
-        search: 'Search',
-        configuration: 'Configuration',
-        language: 'Language',
+        search: '搜索',
+        configuration: '设置',
+        language: '语言',
         theme: {
-            name: 'Theme',
-            light: 'Light',
-            dark: 'Dark',
+            name: '主题',
+            light: '浅色调',
+            dark: '深色调',
         },
         dashboard: {
             monthly_revenue: '月收入',
@@ -40,7 +40,7 @@ export default {
             name: '用户',
             fields: {
                 commands: '订单',
-                groups: '片段',
+                groups: '标签',
                 last_seen_gte: 'Visited Since',
                 name: '姓名',
                 total_spent: 'Total spent',
@@ -57,42 +57,42 @@ export default {
             },
         },
         commands: {
-            name: 'Order |||| Orders',
-            title: 'Order %{reference}',
+            name: '订单',
+            title: '订单 %{reference}',
             fields: {
                 basket: {
-                    delivery: 'Delivery',
-                    reference: 'Reference',
-                    quantity: 'Quantity',
-                    sum: 'Sum',
-                    tax_rate: 'Tax Rate',
-                    total: 'Total',
-                    unit_price: 'Unit Price',
+                    delivery: '已完成',
+                    reference: '产品编号',
+                    quantity: '数量',
+                    sum: '总计',
+                    tax_rate: '税率',
+                    total: '总计',
+                    unit_price: '单价',
                 },
-                customer_id: 'Customer',
-                date_gte: 'Passed Since',
-                date_lte: 'Passed Before',
-                total_gte: 'Min amount',
-                status: 'Status',
-                returned: 'Returned',
+                customer_id: '客户',
+                date_gte: '开始日期',
+                date_lte: '结束日期',
+                total_gte: '最小金额',
+                status: '状态',
+                returned: '退回',
             },
         },
         invoices: {
-            name: 'Invoice |||| Invoices',
+            name: '发票',
             fields: {
-                date: 'Invoice date',
-                customer_id: 'Customer',
-                command_id: 'Order',
-                date_gte: 'Passed Since',
-                date_lte: 'Passed Before',
-                total_gte: 'Min amount',
-                address: 'Address',
+                date: '发票日期',
+                customer_id: '客户',
+                command_id: '订单',
+                date_gte: '开始日期',
+                date_lte: '结束日期',
+                total_gte: '最小金额',
+                address: '地址',
             },
         },
         products: {
-            name: 'Poster |||| Posters',
+            name: '产品',
             fields: {
-                category_id: 'Category',
+                category_id: '分类',
                 height_gte: 'Min height',
                 height_lte: 'Max height',
                 height: 'Height',
@@ -114,9 +114,9 @@ export default {
             },
         },
         categories: {
-            name: 'Category |||| Categories',
+            name: '产品分类',
             fields: {
-                products: 'Products',
+                products: '产品',
             },
         },
         reviews: {
@@ -128,9 +128,9 @@ export default {
                 product_id: 'Product',
                 date_gte: 'Posted since',
                 date_lte: 'Posted before',
-                date: 'Date',
-                comment: 'Comment',
-                rating: 'Rating',
+                date: '日期',
+                comment: '评论',
+                rating: '评分',
             },
             action: {
                 accept: 'Accept',
@@ -144,10 +144,10 @@ export default {
             },
         },
         segments: {
-            name: 'Segments',
+            name: '标签',
             fields: {
-                customers: 'Customers',
-                name: 'Name',
+                customers: '客户',
+                name: '姓名',
             },
             data: {
                 compulsive: 'Compulsive',

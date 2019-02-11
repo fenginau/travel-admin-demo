@@ -26,7 +26,7 @@ const InvoiceShow = props => (
                         <Grid container spacing={16}>
                             <Grid item xs={6}>
                                 <Typography variant="title" gutterBottom>
-                                    Posters Galore
+                                    长城旅行社
                                 </Typography>
                             </Grid>
                             <Grid item xs={6}>
@@ -35,7 +35,7 @@ const InvoiceShow = props => (
                                     gutterBottom
                                     align="right"
                                 >
-                                    Invoice {record.id}
+                                    发票编号 {record.id}
                                 </Typography>
                             </Grid>
                         </Grid>
@@ -61,7 +61,7 @@ const InvoiceShow = props => (
                                     gutterBottom
                                     align="center"
                                 >
-                                    Date{' '}
+                                    日期{' '}
                                 </Typography>
                                 <Typography gutterBottom align="center">
                                     {new Date(record.date).toLocaleDateString()}
@@ -74,7 +74,7 @@ const InvoiceShow = props => (
                                     gutterBottom
                                     align="center"
                                 >
-                                    Order
+                                    订单
                                 </Typography>
                                 <Typography gutterBottom align="center">
                                     <ReferenceField

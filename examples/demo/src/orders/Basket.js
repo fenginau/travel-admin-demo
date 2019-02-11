@@ -84,7 +84,7 @@ class Basket extends Component {
                                                 item.product_id
                                             ].price.toLocaleString(undefined, {
                                                 style: 'currency',
-                                                currency: 'USD',
+                                                currency: 'AUD',
                                             })}
                                         </TableCell>
                                         <TableCell

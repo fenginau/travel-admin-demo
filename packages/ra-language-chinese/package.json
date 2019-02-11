@@ -1,0 +1,14 @@
+{
+    "name": "ra-language-chinese",
+    "version": "2.7.0",
+    "description": "Chinese messages for react-admin, the frontend framework for building admin applications on top of REST/GraphQL services",
+    "main": "index.js",
+    "keywords": [
+        "react",
+        "react-admin",
+        "react-admin",
+        "translation"
+    ],
+    "author": "Feng",
+    "license": "MIT"
+}

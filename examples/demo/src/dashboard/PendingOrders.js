@@ -60,7 +60,7 @@ const location = {
 
 const PendingOrders = ({ orders = [], customers = {}, translate, classes }) => (
     <div className={classes.main}>
-        <CardIcon Icon={ShoppingCartIcon} bgColor="#f44336" />
+        <CardIcon Icon={ShoppingCartIcon} bgColor="#ff9800" />
         <Card className={classes.card}>
             <Typography className={classes.title} color="textSecondary">
                 {translate('pos.dashboard.pending_orders')}

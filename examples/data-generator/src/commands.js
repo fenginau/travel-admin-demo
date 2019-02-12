@@ -19,10 +19,12 @@ export default (db, { serializeDate }) => {
             [30, 20, 5, 2, 1, 1, 1, 1, 1, 1]
         );
         const basket = Array.from(Array(nbProducts).keys()).map(() => ({
-            product_id: random.number({ min: 0, max: 10 * 13 - 1 }),
+            product_id: random.number({ min: 0, max: 8 }),
             quantity: weightedArrayElement([1, 2, 3, 4, 5], [10, 5, 3, 2, 1]),
         }));
 
+        console.log(db.products);
+        console.log(basket);
         const total_ex_taxes = basket.reduce(
             (total, product) =>
                 total +

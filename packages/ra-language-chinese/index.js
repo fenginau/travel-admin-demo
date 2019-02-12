@@ -25,7 +25,7 @@ module.exports = {
         },
         boolean: {
             true: '是',
-            false: '不是',
+            false: '否',
         },
         page: {
             create: 'Create %{name}',

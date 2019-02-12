@@ -14,6 +14,7 @@ export default (options = { serializeDate: true }) => {
     db.commands = generateCommands(db, options);
     db.invoices = generateInvoices(db, options);
     db.reviews = generateReviews(db, options);
+    db.chats = generateCustomers(db, options);
     finalize(db);
 
     return db;

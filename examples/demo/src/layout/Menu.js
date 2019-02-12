@@ -19,6 +19,7 @@ import products from '../products';
 import categories from '../categories';
 import reviews from '../reviews';
 import SubMenu from './SubMenu';
+import chats from '../chats';
 
 class Menu extends Component {
     state = {
@@ -120,6 +121,14 @@ class Menu extends Component {
                         smart_count: 2,
                     })}
                     leftIcon={<reviews.icon />}
+                    onClick={onMenuClick}
+                />
+                <MenuItemLink
+                    to={`/chats`}
+                    primaryText={translate(`resources.chats.name`, {
+                        smart_count: 2,
+                    })}
+                    leftIcon={<chats.icon />}
                     onClick={onMenuClick}
                 />
                 <Responsive

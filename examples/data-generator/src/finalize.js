@@ -1,6 +1,6 @@
 import { weightedBoolean } from './utils';
 
-export default function(db) {
+export default function (db) {
     // set latest purchase date
     db.commands.forEach(command => {
         let customer = db.customers[command.customer_id];
@@ -27,6 +27,12 @@ export default function(db) {
             db.customers[customer_id].groups.push('collector');
         }
     });
+
+    // add 'potential' group
+    db.customers
+        .filter(customer => customer.id % 5 == 0)
+        .forEach(customer => customer.groups.push('potential'));
+
 
     // add 'ordered_once' group
     db.customers

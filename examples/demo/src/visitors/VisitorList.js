@@ -24,8 +24,8 @@ const VisitorFilter = props => (
     <Filter {...props}>
         <SearchInput source="q" alwaysOn />
         <DateInput source="last_seen_gte" />
-        <NullableBooleanInput source="has_ordered" />
-        <NullableBooleanInput source="has_newsletter" defaultValue />
+        <NullableBooleanInput source="has_ordered" label="已购买客户" />
+        <NullableBooleanInput source="has_newsletter" defaultValue label="订阅" />
         <SegmentInput />
     </Filter>
 );
@@ -45,8 +45,8 @@ const VisitorList = ({ classes, ...props }) => (
             xsmall={<MobileGrid />}
             medium={
                 <Datagrid>
-                    <CustomerLinkField />
-                    <DateField source="last_seen" type="date" />
+                    <CustomerLinkField label="名称" />
+                    <DateField source="last_seen" type="date" label="注册日期" />
                     <NumberField
                         source="nb_commands"
                         label="resources.customers.fields.commands"
@@ -54,10 +54,11 @@ const VisitorList = ({ classes, ...props }) => (
                     />
                     <ColoredNumberField
                         source="total_spent"
-                        options={{ style: 'currency', currency: 'USD' }}
+                        options={{ style: 'currency', currency: 'AUD' }}
+                        label="总共消费"
                     />
-                    <DateField source="latest_purchase" showTime />
-                    <BooleanField source="has_newsletter" label="News." />
+                    <DateField source="latest_purchase" showTime label="上次订单" />
+                    <BooleanField source="has_newsletter" label="订阅" />
                     <SegmentsField />
                     <EditButton />
                 </Datagrid>

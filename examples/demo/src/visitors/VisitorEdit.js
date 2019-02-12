@@ -33,10 +33,12 @@ const VisitorEdit = ({ classes, ...props }) => (
                 <TextInput
                     source="first_name"
                     formClassName={classes.first_name}
+                    label="名"
                 />
                 <TextInput
                     source="last_name"
                     formClassName={classes.last_name}
+                    label="姓"
                 />
                 <TextInput
                     type="email"
@@ -44,16 +46,19 @@ const VisitorEdit = ({ classes, ...props }) => (
                     validation={{ email: true }}
                     fullWidth={true}
                     formClassName={classes.email}
+                    label="电子邮件"
                 />
-                <DateInput source="birthday" />
+                <DateInput source="birthday" 
+                    label="生日"/>
             </FormTab>
             <FormTab label="resources.customers.tabs.address" path="address">
                 <LongTextInput
                     source="address"
                     formClassName={classes.address}
+                    label="住址"
                 />
-                <TextInput source="zipcode" formClassName={classes.zipcode} />
-                <TextInput source="city" formClassName={classes.city} />
+                <TextInput source="zipcode" formClassName={classes.zipcode} label="邮编" />
+                <TextInput source="city" formClassName={classes.city} label="城市" />
             </FormTab>
             <FormTab label="resources.customers.tabs.orders" path="orders">
                 <ReferenceManyField
@@ -96,18 +101,18 @@ const VisitorEdit = ({ classes, ...props }) => (
             </FormTab>
             <FormTab label="resources.customers.tabs.stats" path="stats">
                 <SegmentsInput />
-                <NullableBooleanInput source="has_newsletter" />
+                <NullableBooleanInput source="has_newsletter" label="是否订阅" />
                 <DateField
                     source="first_seen"
-                    style={{ width: 128, display: 'inline-block' }}
+                    style={{ width: 128, display: 'inline-block' }} label="注册日期"
                 />
                 <DateField
                     source="latest_purchase"
-                    style={{ width: 128, display: 'inline-block' }}
+                    style={{ width: 128, display: 'inline-block' }} label="上次购买"
                 />
                 <DateField
                     source="last_seen"
-                    style={{ width: 128, display: 'inline-block' }}
+                    style={{ width: 128, display: 'inline-block' }} label="上次登录"
                 />
             </FormTab>
         </TabbedForm>

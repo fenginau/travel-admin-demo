@@ -24,6 +24,7 @@ const ReviewFilter = ({ classes, ...props }) => (
                 { id: 'rejected', name: 'Rejected' },
             ]}
             className={classes.status}
+            label="状态"
         />
         <ReferenceInput source="customer_id" reference="customers">
             <AutocompleteInput

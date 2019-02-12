@@ -81,7 +81,7 @@ const LoadedGridList = ({ classes, ids, data, basePath, width }) => (
                         title={data[id].reference}
                         subtitle={
                             <span>
-                                {data[id].width}x{data[id].height},{' '}
+                                天数:{data[id].width}天,{' '}{data[id].height}人成团,{' '}
                                 <NumberField
                                     className={classes.price}
                                     source="price"
@@ -89,7 +89,7 @@ const LoadedGridList = ({ classes, ids, data, basePath, width }) => (
                                     color="inherit"
                                     options={{
                                         style: 'currency',
-                                        currency: 'USD',
+                                        currency: 'AUD',
                                     }}
                                 />
                             </span>

@@ -17,6 +17,7 @@ import products from './products';
 import invoices from './invoices';
 import categories from './categories';
 import reviews from './reviews';
+import chats from './chats';
 
 import dataProviderFactory from './dataProvider';
 import fakeServerFactory from './fakeServer';
@@ -88,6 +89,7 @@ class App extends Component {
                 <Resource name="products" {...products} />
                 <Resource name="categories" {...categories} />
                 <Resource name="reviews" {...reviews} />
+                <Resource name="chats" {...chats} />
             </Admin>
         );
     }

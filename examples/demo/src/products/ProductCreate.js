@@ -8,6 +8,8 @@ import {
     TabbedForm,
     TextInput,
     required,
+    ImageInput,
+    ImageField
 } from 'react-admin';
 import withStyles from '@material-ui/core/styles/withStyles';
 import RichTextInput from 'ra-input-rich-text';
@@ -36,6 +38,11 @@ const ProductCreate = ({ classes, ...props }) => (
                     options={{ fullWidth: true }}
                     validate={required()}
                 />
+            </FormTab>
+            <FormTab label="resources.products.tabs.morepic">
+                <ImageInput multiple source="pictures" accept="image/*">
+                    <ImageField source="src" title="title" />
+                </ImageInput>
             </FormTab>
             <FormTab label="resources.products.tabs.details" path="details">
                 <TextInput source="reference" validate={required()} />

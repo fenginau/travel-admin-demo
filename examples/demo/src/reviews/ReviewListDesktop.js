@@ -34,7 +34,7 @@ const ReviewListDesktop = ({ classes, ...props }) => (
         <ProductReferenceField linkType={false} />
         <StarRatingField />
         <TextField source="comment" cellClassName={classes.comment} />
-        <TextField source="status" />
+        <TextField source="status" label="状态" />
     </Datagrid>
 );
 

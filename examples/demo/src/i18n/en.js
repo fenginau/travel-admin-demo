@@ -156,6 +156,7 @@ export default {
                 regular: 'Regular',
                 returns: 'Returns',
                 reviewer: 'Reviewer',
+                potential: 'potential',
             },
         },
     },

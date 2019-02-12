@@ -13,6 +13,8 @@ import {
     TabbedForm,
     TextField,
     TextInput,
+    ImageInput,
+    ImageField
 } from 'react-admin';
 import withStyles from '@material-ui/core/styles/withStyles';
 import RichTextInput from 'ra-input-rich-text';
@@ -22,7 +24,7 @@ import StarRatingField from '../reviews/StarRatingField';
 import Poster from './Poster';
 import { styles as createStyles } from './ProductCreate';
 
-const ProductTitle = ({ record }) => <span>Poster #{record.reference}</span>;
+const ProductTitle = ({ record }) => <span>线路 #{record.reference}</span>;
 
 const styles = {
     ...createStyles,
@@ -41,6 +43,11 @@ const ProductEdit = ({ classes, ...props }) => (
                 <Poster />
                 <TextInput source="image" options={{ fullWidth: true }} />
                 <TextInput source="thumbnail" options={{ fullWidth: true }} />
+            </FormTab>
+            <FormTab label="resources.products.tabs.morepic">
+                <ImageInput multiple source="pictures" accept="image/*">
+                    <ImageField source="src" title="title" />
+                </ImageInput>
             </FormTab>
             <FormTab label="resources.products.tabs.details" path="details">
                 <TextInput source="reference" />

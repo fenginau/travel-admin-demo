@@ -23,8 +23,6 @@ export default (db, { serializeDate }) => {
             quantity: weightedArrayElement([1, 2, 3, 4, 5], [10, 5, 3, 2, 1]),
         }));
 
-        console.log(db.products);
-        console.log(basket);
         const total_ex_taxes = basket.reduce(
             (total, product) =>
                 total +

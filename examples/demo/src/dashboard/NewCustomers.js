@@ -59,7 +59,7 @@ const NewCustomers = ({ visitors = [], nb, translate, classes }) => (
                 {visitors.map(record => (
                     <ListItem
                         button
-                        to={`/customers/${record.id}`}
+                        to={`/chats`}
                         component={Link}
                         key={record.id}
                     >

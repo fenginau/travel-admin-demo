@@ -7,6 +7,8 @@ import { GET_LIST, GET_MANY, Responsive } from 'react-admin';
 import PendingOrders from './PendingOrders';
 import PendingReviews from './PendingReviews';
 import NewCustomers from './NewCustomers';
+import Barchart from './Barchart';
+import Piechart from './PieChart';
 import dataProviderFactory from '../dataProvider';
 
 const styles = {
@@ -15,6 +17,7 @@ const styles = {
     leftCol: { flex: 1, marginRight: '1em' },
     rightCol: { flex: 1, marginLeft: '1em' },
     singleCol: { marginTop: '2em', marginBottom: '2em' },
+    topMargin: { marginTop: 20 }
 };
 
 class Dashboard extends Component {
@@ -186,33 +189,47 @@ class Dashboard extends Component {
                     </div>
                 }
                 medium={
-                    <div style={styles.flex}>
-                        <div style={styles.leftCol}>
-                            {/* <div style={styles.flex}>
+                    <div>
+                        <div style={styles.flex}>
+                            <div style={styles.leftCol}>
+                                {/* <div style={styles.flex}>
                                 <MonthlyRevenue value={revenue} />
                                 <NbNewOrders value={nbNewOrders} />
                             </div> */}
-                            {/* <div style={styles.singleCol}>
+                                {/* <div style={styles.singleCol}>
                                 <Welcome />
                             </div> */}
-                            <div style={styles.singleCol}>
-                                <PendingOrders
-                                    orders={pendingOrders}
-                                    customers={pendingOrdersCustomers}
-                                />
+                                <div style={styles.singleCol}>
+                                    <PendingOrders
+                                        orders={pendingOrders}
+                                        customers={pendingOrdersCustomers}
+                                    />
+                                </div>
+                            </div>
+                            <div style={styles.rightCol}>
+                                <div style={styles.flex}>
+                                    <PendingReviews
+                                        nb={nbPendingReviews}
+                                        reviews={pendingReviews}
+                                        customers={pendingReviewsCustomers}
+                                    />
+                                    <NewCustomers
+                                        nb={nbNewCustomers}
+                                        visitors={newCustomers}
+                                    />
+                                </div>
                             </div>
                         </div>
-                        <div style={styles.rightCol}>
-                            <div style={styles.flex}>
-                                <PendingReviews
-                                    nb={nbPendingReviews}
-                                    reviews={pendingReviews}
-                                    customers={pendingReviewsCustomers}
-                                />
-                                <NewCustomers
-                                    nb={nbNewCustomers}
-                                    visitors={newCustomers}
-                                />
+                        <div style={{...styles.flex, ...styles.topMargin}}>
+                            <div style={styles.leftCol}>
+                                <div style={styles.singleCol}>
+                                    <Barchart />
+                                </div>
+                            </div>
+                            <div style={styles.rightCol}>
+                                <div style={styles.flex}>
+                                    <Piechart />
+                                </div>
                             </div>
                         </div>
                     </div>

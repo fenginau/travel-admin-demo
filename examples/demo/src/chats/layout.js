@@ -62,7 +62,7 @@ const conversations = [
             ,
             {
                 id: 2,
-                isMe: true,
+                isMe: false,
                 time: '2019-01-01 14:36',
                 message: '好的谢谢'
             }
@@ -75,27 +75,27 @@ class CustomerList extends Component {
 
     userClick = () => {
         let filtered = [0, 1].filter((v, i) => {
-            return v != this.state.nb;
+            return v !== this.state.nb;
         });
         this.setState({ nb: filtered[Math.floor(Math.random() * filtered.length)] })
     }
 
     sendMessage = () => {
-        if (this.state.text != '' && this.state.text != undefined) {
+        if (this.state.text !== '' && this.state.text !== undefined) {
             let date = new Date();
-            let now = `${date.getFullYear()}-${date.getMonth()}-${date.getDate} ${date.getHours}:${date.getTime}`;
+            let now = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}`;
             conversations[this.state.nb].messages.push({
                 id: 1,
                 isMe: true,
                 time: now,
                 message: this.state.text
             });
-            this.setState({conversations, text: ''});
+            this.setState({ conversations, text: '' });
         }
     }
 
     handleChange = (event) => {
-        const { target: { name, value } } = event;
+        const { target: { value } } = event;
         this.setState({ text: value });
     }
 
@@ -127,8 +127,18 @@ class CustomerList extends Component {
                         {this.state.conversations[this.state.nb].messages.map((message, index) => (
                             <Grid direction='row' justify={message.isMe ? 'flex-start' : 'flex-end'} style={{ display: 'flex' }} >
                                 {message.isMe
-                                    ? <Paper style={{ padding: 16, margin: 16 }}>{message.message}</Paper>
-                                    : <Paper style={{ padding: 16, margin: 16, backgroundColor: '#71BEE8', color: '#fff' }}>{message.message}</Paper>}
+                                    ? <div>
+                                        <Paper style={{ padding: 16, marginTop: 20, marginBottom: 5 }}>
+                                            <div>{message.message}</div>
+                                        </Paper>
+                                        <span style={{ fontSize: 12, color: '#5c5c5c', marginLeft: 18 }}>{message.time}</span>
+                                    </div>
+                                    : <div style={{display: 'flex', justifyContent: 'flex-end', flexDirection: 'column', alignItems: 'flex-end'}}>
+                                        <Paper style={{ padding: 16, marginTop: 20, marginBottom: 5, backgroundColor: '#71BEE8', color: '#fff' }}>
+                                            <div>{message.message}</div>
+                                        </Paper>
+                                        <span style={{ fontSize: 12, color: '#5c5c5c', marginRight: 18 }}>{message.time}</span>
+                                    </div>}
                             </Grid>
                         ))}
                     </CardContent>

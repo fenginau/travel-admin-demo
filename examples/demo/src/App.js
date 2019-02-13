@@ -18,6 +18,8 @@ import invoices from './invoices';
 import categories from './categories';
 import reviews from './reviews';
 import chats from './chats';
+import poi from './poi';
+import roles from './roles';
 
 import dataProviderFactory from './dataProvider';
 import fakeServerFactory from './fakeServer';
@@ -90,6 +92,8 @@ class App extends Component {
                 <Resource name="categories" {...categories} />
                 <Resource name="reviews" {...reviews} />
                 <Resource name="chats" {...chats} />
+                <Resource name="poi" {...poi} />
+                <Resource name="roles" {...roles} />
             </Admin>
         );
     }

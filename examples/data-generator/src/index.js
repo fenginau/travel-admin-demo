@@ -4,7 +4,9 @@ import generateProducts from './products';
 import generateCommands from './commands';
 import generateInvoices from './invoices';
 import generateReviews from './reviews';
+import generateRoles from './roles';
 import finalize from './finalize';
+import generatePoi from './poi';
 
 export default (options = { serializeDate: true }) => {
     const db = {};
@@ -15,6 +17,8 @@ export default (options = { serializeDate: true }) => {
     db.invoices = generateInvoices(db, options);
     db.reviews = generateReviews(db, options);
     db.chats = generateCustomers(db, options);
+    db.poi = generatePoi(db, options);
+    db.roles = generateRoles(db, options);
     finalize(db);
 
     return db;

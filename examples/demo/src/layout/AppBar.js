@@ -2,6 +2,7 @@ import React from 'react';
 import { AppBar, UserMenu, MenuItemLink, translate } from 'react-admin';
 import Typography from '@material-ui/core/Typography';
 import SettingsIcon from '@material-ui/icons/Settings';
+import HttpsIcon from '@material-ui/icons/Https';
 import { withStyles } from '@material-ui/core/styles';
 
 import Logo from './Logo';
@@ -24,6 +25,11 @@ const CustomUserMenu = translate(({ translate, ...props }) => (
             to="/configuration"
             primaryText={translate('pos.configuration')}
             leftIcon={<SettingsIcon />}
+        />
+        <MenuItemLink
+            to="/roles"
+            primaryText={translate('pos.configuration')}
+            leftIcon={<HttpsIcon />}
         />
     </UserMenu>
 ));

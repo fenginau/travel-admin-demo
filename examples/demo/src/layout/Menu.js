@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import compose from 'recompose/compose';
 import SettingsIcon from '@material-ui/icons/Settings';
 import LabelIcon from '@material-ui/icons/Label';
+import HttpsIcon from '@material-ui/icons/Https';
 import { withRouter } from 'react-router-dom';
 import {
     translate,
@@ -20,6 +21,8 @@ import categories from '../categories';
 import reviews from '../reviews';
 import SubMenu from './SubMenu';
 import chats from '../chats';
+import poi from '../poi';
+import roles from '../roles';
 
 class Menu extends Component {
     state = {
@@ -129,6 +132,14 @@ class Menu extends Component {
                         smart_count: 2,
                     })}
                     leftIcon={<chats.icon />}
+                    onClick={onMenuClick}
+                />
+                <MenuItemLink
+                    to={`/poi`}
+                    primaryText={translate(`resources.poi.name`, {
+                        smart_count: 2,
+                    })}
+                    leftIcon={<poi.icon />}
                     onClick={onMenuClick}
                 />
                 <Responsive

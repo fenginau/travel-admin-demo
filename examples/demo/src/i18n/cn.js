@@ -5,6 +5,7 @@ export default {
     pos: {
         search: '搜索',
         configuration: '设置',
+        role: '权限管理',
         language: '语言',
         theme: {
             name: '主题',
@@ -163,6 +164,9 @@ export default {
         chats: {
             name: '消息',
             fields: {}
+        },
+        poi: {
+            name: '著名景点'
         }
     },
 };

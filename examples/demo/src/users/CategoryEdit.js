@@ -7,12 +7,13 @@ import {
     ReferenceManyField,
     SimpleForm,
     TextInput,
-    TextField
 } from 'react-admin';
+
+import ProductRefField from '../products/ProductRefField';
 
 const CategoryTitle = translate(({ record, translate }) => (
     <span>
-        {translate('resources.poi.roles', { smart_count: 1 })} &quot;
+        {translate('resources.categories.name', { smart_count: 1 })} &quot;
         {record.name}&quot;
     </span>
 ));
@@ -20,16 +21,15 @@ const CategoryTitle = translate(({ record, translate }) => (
 const CategoryEdit = props => (
     <Edit title={<CategoryTitle />} {...props}>
         <SimpleForm>
-            <TextInput source="name" label='权限' />
+            <TextInput source="name" />
             <ReferenceManyField
-                reference="users"
+                reference="products"
                 target="category_id"
-                label={null}
+                label="pos.roles"
                 perPage={5}
             >
                 <Datagrid>
-                    <TextField source='userid' label='ID' />
-                    <TextField source='name' label='用户名' />
+                    <ProductRefField source="reference" label='用户' />
                     <EditButton />
                 </Datagrid>
             </ReferenceManyField>

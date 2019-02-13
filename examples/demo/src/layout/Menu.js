@@ -22,7 +22,6 @@ import reviews from '../reviews';
 import SubMenu from './SubMenu';
 import chats from '../chats';
 import poi from '../poi';
-import roles from '../roles';
 
 class Menu extends Component {
     state = {
@@ -148,6 +147,17 @@ class Menu extends Component {
                             to="/configuration"
                             primaryText={translate('pos.configuration')}
                             leftIcon={<SettingsIcon />}
+                            onClick={onMenuClick}
+                        />
+                    }
+                    medium={null}
+                />
+                <Responsive
+                    xsmall={
+                        <MenuItemLink
+                            to="/roles"
+                            primaryText={translate('pos.roles')}
+                            leftIcon={<HttpsIcon />}
                             onClick={onMenuClick}
                         />
                     }

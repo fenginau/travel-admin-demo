@@ -5,6 +5,7 @@ import generateCommands from './commands';
 import generateInvoices from './invoices';
 import generateReviews from './reviews';
 import generateRoles from './roles';
+import generateUsers from './users';
 import finalize from './finalize';
 import generatePoi from './poi';
 
@@ -19,6 +20,7 @@ export default (options = { serializeDate: true }) => {
     db.chats = generateCustomers(db, options);
     db.poi = generatePoi(db, options);
     db.roles = generateRoles(db, options);
+    db.users = generateUsers(db, options);
     finalize(db);
 
     return db;

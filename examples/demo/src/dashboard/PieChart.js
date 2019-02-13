@@ -7,7 +7,7 @@ import PieChartIcon from '@material-ui/icons/PieChart';
 import Divider from '@material-ui/core/Divider';
 import { Link } from 'react-router-dom';
 import { translate } from 'react-admin';
-import { PieChart, Pie, Sector, Cell, Legend } from 'recharts';
+import { PieChart, Pie, Cell, Legend } from 'recharts';
 
 import CardIcon from './CardIcon';
 

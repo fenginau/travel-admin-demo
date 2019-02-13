@@ -20,6 +20,7 @@ import reviews from './reviews';
 import chats from './chats';
 import poi from './poi';
 import roles from './roles';
+import users from './users';
 
 import dataProviderFactory from './dataProvider';
 import fakeServerFactory from './fakeServer';
@@ -94,6 +95,7 @@ class App extends Component {
                 <Resource name="chats" {...chats} />
                 <Resource name="poi" {...poi} />
                 <Resource name="roles" {...roles} />
+                <Resource name="users" {...users} />
             </Admin>
         );
     }

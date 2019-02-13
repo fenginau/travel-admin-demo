@@ -5,7 +5,7 @@ export default {
     pos: {
         search: '搜索',
         configuration: '设置',
-        role: '权限管理',
+        roles: '权限管理',
         language: '语言',
         theme: {
             name: '主题',
@@ -118,7 +118,7 @@ export default {
         categories: {
             name: '产品分类',
             fields: {
-                products: '产品',
+                products: '产品'
             },
         },
         reviews: {
@@ -166,7 +166,9 @@ export default {
             fields: {}
         },
         poi: {
-            name: '著名景点'
+            name: '著名景点',
+            user: '用户',
+            roles: '权限',
         }
     },
 };

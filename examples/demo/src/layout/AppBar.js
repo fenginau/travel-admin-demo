@@ -28,7 +28,7 @@ const CustomUserMenu = translate(({ translate, ...props }) => (
         />
         <MenuItemLink
             to="/roles"
-            primaryText={translate('pos.configuration')}
+            primaryText={translate('pos.roles')}
             leftIcon={<HttpsIcon />}
         />
     </UserMenu>

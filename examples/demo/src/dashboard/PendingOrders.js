@@ -106,7 +106,7 @@ const PendingOrders = ({ orders = [], customers = {}, translate, classes }) => (
                             })}
                         />
                         <ListItemSecondaryAction>
-                            <span className={classes.cost}>{record.total}$</span>
+                            <span className={classes.cost}>AUD {record.total}</span>
                         </ListItemSecondaryAction>
                     </ListItem>
                 ))}

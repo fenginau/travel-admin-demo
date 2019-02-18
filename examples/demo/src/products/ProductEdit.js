@@ -36,6 +36,22 @@ const styles = {
     },
 };
 
+const modules = {
+    toolbar: [
+        [{ 'header': '1' }, { 'header': '2' }, { 'font': [] }],
+        [{ size: [] }],
+        ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+        [{ 'list': 'ordered' }, { 'list': 'bullet' },
+        { 'indent': '-1' }, { 'indent': '+1' }],
+        ['link', 'image', 'video'],
+        ['clean']
+    ],
+    clipboard: {
+        // toggle to add extra line breaks when pasting HTML:
+        matchVisual: false,
+    }
+}
+
 const ProductEdit = ({ classes, ...props }) => (
     <Edit {...props} title={<ProductTitle />}>
         <TabbedForm>
@@ -71,7 +87,7 @@ const ProductEdit = ({ classes, ...props }) => (
                 label="resources.products.tabs.description"
                 path="description"
             >
-                <RichTextInput source="description" addLabel={false} />
+                <RichTextInput toolbar={modules.toolbar} source="description" addLabel={false} />
             </FormTab>
             <FormTab label="resources.products.tabs.reviews" path="reviews">
                 <ReferenceManyField
